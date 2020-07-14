@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/yeflix/static/js/main.1e057ff4.chunk.js",
+    "main.js.map": "/yeflix/static/js/main.1e057ff4.chunk.js.map",
+    "runtime-main.js": "/yeflix/static/js/runtime-main.2a2a63f4.js",
+    "runtime-main.js.map": "/yeflix/static/js/runtime-main.2a2a63f4.js.map",
+    "static/js/2.d89c1345.chunk.js": "/yeflix/static/js/2.d89c1345.chunk.js",
+    "static/js/2.d89c1345.chunk.js.map": "/yeflix/static/js/2.d89c1345.chunk.js.map",
+    "index.html": "/yeflix/index.html",
+    "precache-manifest.5548e637c10b6955a7313c9179f8ef44.js": "/yeflix/precache-manifest.5548e637c10b6955a7313c9179f8ef44.js",
+    "service-worker.js": "/yeflix/service-worker.js",
+    "static/js/2.d89c1345.chunk.js.LICENSE.txt": "/yeflix/static/js/2.d89c1345.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2a2a63f4.js",
+    "static/js/2.d89c1345.chunk.js",
+    "static/js/main.1e057ff4.chunk.js"
+  ]
+}
