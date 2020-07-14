@@ -44,7 +44,7 @@ const Cover = styled.div`
 
 const Data = styled.div`
   width: 70%;
-  margin-left: 2rem;
+  margin-left: 10px;
 `;
 
 const Title = styled.h3`
@@ -72,15 +72,17 @@ const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
     <>
       <Helmet>
-        <title>Loading | Yeflix</title>
+        <title>로딩중 | Yeflix</title>
       </Helmet>
       <Loader />
     </>
   ) : (
     <Container>
       <Helmet>
-        {result.original_title ? result.original_title : result.original_name} |
-        Yeflix
+        <title>
+          {result.original_title ? result.original_title : result.original_name}{" "}
+          | Yeflix
+        </title>
       </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
@@ -90,14 +92,14 @@ const DetailPresenter = ({ result, loading, error }) =>
           bgImage={
             result.poster_path
               ? `https://image.tmdb.org/t/p/original${result.poster_path}`
-              : "사진이 없습니다."
+              : require("../../assets/noImage.png")
           }
         />
         <Data>
           <Title>
             {result.original_title
               ? result.original_title
-              : result.original_title}
+              : result.original_name}
           </Title>
           <ItemContainer>
             <Item>
@@ -115,7 +117,7 @@ const DetailPresenter = ({ result, loading, error }) =>
                 result.genres.map((genre, index) =>
                   index === result.genres.length - 1
                     ? genre.name
-                    : `${genre.name}`
+                    : `${genre.name} / `
                 )}
             </Item>
           </ItemContainer>

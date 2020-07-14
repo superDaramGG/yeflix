@@ -8,8 +8,10 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding: 0 20px;
   padding: 20px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    padding: 150px 20px 20px 20px;
+  }
 `;
 
 const Form = styled.form`
@@ -19,8 +21,13 @@ const Form = styled.form`
 
 const Input = styled.input`
   all: unset;
-  font-size: 28px;
+  font-size: 40px;
   width: 100%;
+  margin-top: 3rem;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    font-size: 23px;
+    border-bottom: 3px solid red;
+  }
 `;
 
 const SearchPresenter = ({
@@ -28,17 +35,17 @@ const SearchPresenter = ({
   tvResults,
   loading,
   searchTerm,
-  handleSumbit,
+  handleSubmit,
   error,
   updateTerm,
 }) => (
   <Container>
     <Helmet>
-      <title>Search | Yeflix</title>
+      <title>검색 | Yeflix</title>
     </Helmet>
-    <Form onSubmit={handleSumbit}>
+    <Form onSubmit={handleSubmit}>
       <Input
-        placeholder="Search Movies or TV Shows..."
+        placeholder="영화나 TV쇼를 검색하세요."
         value={searchTerm}
         onChange={updateTerm}
       />
@@ -48,37 +55,31 @@ const SearchPresenter = ({
     ) : (
       <>
         {movieResults && movieResults.length > 0 && (
-          <Section title="Movie Results">
+          <Section title="영화 검색결과">
             {movieResults.map((movie) => (
-              <>
-                <span key={movie.id}>{movie.title}</span>
-                <Poster
-                  key={movie.id}
-                  id={movie.id}
-                  imageUrl={movie.poster_path}
-                  title={movie.original_title}
-                  rating={movie.vote_average}
-                  year={movie.release_date.substring(0, 4)}
-                  isMovie={true}
-                />
-              </>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date.substring(0, 4)}
+                isMovie={true}
+              />
             ))}
           </Section>
         )}
         {tvResults && tvResults.length > 0 && (
-          <Section title="Movie Results">
+          <Section title="TV쇼 검색결과">
             {tvResults.map((show) => (
-              <>
-                <span key={show.id}>{show.title}</span>
-                <Poster
-                  key={show.id}
-                  id={show.id}
-                  imageUrl={show.poster_path}
-                  title={show.original_title}
-                  rating={show.vote_average}
-                  year={show.release_date.substring(0, 4)}
-                />
-              </>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date.substring(0, 4)}
+              />
             ))}
           </Section>
         )}
@@ -87,7 +88,7 @@ const SearchPresenter = ({
           movieResults &&
           tvResults.length === 0 &&
           movieResults.length === 0 && (
-            <Message text="Nothing found" color="#95a5a6" />
+            <Message text="찾을 수 없습니다." color="#95a5a6" />
           )}
       </>
     )}
@@ -100,7 +101,7 @@ SearchPresenter.propTypes = {
   error: PropTypes.string,
   searchTerm: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-  handleSumbit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   updateTerm: PropTypes.func.isRequired,
 };
 

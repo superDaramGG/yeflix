@@ -6,14 +6,13 @@ const Container = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  font-size: 28px;
+  align-items: center;
+  font-size: 40px;
   margin-top: 20px;
 `;
 
 export default () => (
   <Container>
-    <span role="img" aria-label="Loading">
-      ⏰
-    </span>
+    <span>로딩중입니다...</span>
   </Container>
 );

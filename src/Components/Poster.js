@@ -8,7 +8,6 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-  border: 1px solid #fff;
   background-image: url(${(props) => props.bgUrl});
   height: 180px;
   background-size: cover;
@@ -56,9 +55,10 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
           bgUrl={
             imageUrl
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : "사진이 없습니다."
+              : require("../assets/noImage.png")
           }
         />
+
         <Rating>
           <span role="img" aria-label="rating">
             ⭐️
@@ -66,7 +66,9 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
           {rating}/10
         </Rating>
       </ImageContainer>
-      <Title>{title}</Title>
+      <Title>
+        {title.length > 18 ? `${title.substring(0, 18)}...` : title}
+      </Title>
       <Year>{year}</Year>
     </Container>
   </Link>

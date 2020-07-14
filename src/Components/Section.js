@@ -8,18 +8,19 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.span`
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 25px;
 `;
 
 const Grid = styled.div`
-  border: 1px solid #fff;
   margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 125px);
   grid-gap: 25px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    grid-gap: 10px;
+  }
 `;
 
 const Section = ({ title, children }) => (

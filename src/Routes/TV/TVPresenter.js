@@ -8,21 +8,23 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding: 0 20px;
   padding: 20px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    padding: 150px 20px 20px 20px;
+  }
 `;
 
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
   <>
     <Helmet>
-      <title>TV Shows | Yeflix</title>
+      <title>TV 쇼 | Yeflix</title>
     </Helmet>
     {loading ? (
       <Loader />
     ) : (
       <Container>
         {topRated && topRated.length > 0 && (
-          <Section title="Top Rated Shows">
+          <Section title="최고등급쇼">
             {topRated.map((show) => (
               <Poster
                 key={show.id}
@@ -36,7 +38,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
           </Section>
         )}
         {popular && popular.length > 0 && (
-          <Section title="Popular Shows">
+          <Section title="인기쇼">
             {popular.map((show) => (
               <Poster
                 key={show.id}
@@ -50,7 +52,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
           </Section>
         )}
         {airingToday && airingToday.length > 0 && (
-          <Section title="Airing Today">
+          <Section title="오늘방송">
             {airingToday.map((show) => (
               <Poster
                 key={show.id}

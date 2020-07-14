@@ -30,7 +30,9 @@ export default class extends React.Component {
 
   searchByTerm = async () => {
     const { searchTerm } = this.state;
+
     this.setState({ loading: true });
+
     try {
       const {
         data: { results: movieResults },
@@ -38,9 +40,12 @@ export default class extends React.Component {
       const {
         data: { results: tvResults },
       } = await tvApi.search(searchTerm);
-      this.setState({ movieResults, tvResults });
+      this.setState({
+        movieResults,
+        tvResults,
+      });
     } catch {
-      this.setState({ error: "can't find results" });
+      this.setState({ error: "결과를 찾을 수 없습니다." });
     } finally {
       this.setState({ loading: false });
     }

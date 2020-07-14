@@ -1,6 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
-import { moviesApi } from "../../api";
+import { moviesApi } from "api";
 
 export default class extends React.Component {
   state = {
@@ -29,7 +29,7 @@ export default class extends React.Component {
       });
     } catch {
       this.setState({
-        error: "can't find movies information",
+        error: "정보를 찾을 수 없습니다.",
       });
     } finally {
       this.setState({
@@ -40,7 +40,6 @@ export default class extends React.Component {
 
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
-
     return (
       <HomePresenter
         nowPlaying={nowPlaying}

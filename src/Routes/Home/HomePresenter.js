@@ -8,24 +8,26 @@ import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
 const Container = styled.div`
-  padding: 0px 20px;
   padding: 20px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    padding: 150px 20px 20px 20px;
+  }
 `;
 
 const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (
   <>
     <Helmet>
-      <title>Movies | Yeflix</title>
+      <title>영화 | Yeflix</title>
     </Helmet>
     {loading ? (
       <Loader />
     ) : (
       <Container>
         <Helmet>
-          <title>Movies | Yeflix</title>
+          <title>영화 | Yeflix</title>
         </Helmet>
         {nowPlaying && nowPlaying.length > 0 && (
-          <Section title="Now Playing">
+          <Section title="현재작">
             {nowPlaying.map((movie) => (
               <Poster
                 key={movie.id}
@@ -40,7 +42,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (
           </Section>
         )}
         {upcoming && upcoming.length > 0 && (
-          <Section title="Upcoming Movies">
+          <Section title="상영예정작">
             {upcoming.map((movie) => (
               <Poster
                 key={movie.id}
@@ -55,7 +57,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (
           </Section>
         )}
         {popular && popular.length > 0 && (
-          <Section title="Popular Movies">
+          <Section title="인기작">
             {popular.map((movie) => (
               <Poster
                 key={movie.id}
@@ -77,8 +79,8 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => (
 
 HomePresenter.propTypes = {
   nowPlaying: PropTypes.array,
-  upcoming: PropTypes.array,
   popular: PropTypes.array,
+  upcoming: PropTypes.array,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
 };
