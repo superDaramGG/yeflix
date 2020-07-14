@@ -14,16 +14,12 @@ const Header = styled.header`
   background-color: rgba(20, 20, 20, 0.8);
   z-index: 10;
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
-  @media all and (min-width: 320px) and (max-width: 500px) {
-    height: 180px;
-  }
 `;
 
 const List = styled.ul`
   display: flex;
   @media all and (min-width: 320px) and (max-width: 500px) {
     width: 100%;
-    display: block;
   }
 `;
 
@@ -35,10 +31,10 @@ const Logo = styled.li`
   font-weight: bold;
   color: red;
   @media all and (min-width: 320px) and (max-width: 500px) {
-    width: 100%;
     text-align: center;
-    margin-left: 0;
     font-size: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -50,7 +46,7 @@ const Item = styled.li`
     ${(props) => (props.current ? "#3498db" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
   @media all and (min-width: 320px) and (max-width: 500px) {
-    width: 100%;
+    width: 60px;
   }
 `;
 

@@ -10,7 +10,7 @@ const Container = styled.div`
   position: relative;
   padding: 50px;
   @media all and (min-width: 320px) and (max-width: 500px) {
-    padding: 180px 10px 50px 10px;
+    padding: 50px 10px;
   }
 `;
 
@@ -76,13 +76,13 @@ const Data = styled.div`
     width: 100%;
     text-align: center;
     margin-left: 0;
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
   }
   @media all and (min-width: 768px) and (max-width: 1024px) {
     width: 100%;
     text-align: center;
     margin-left: 0;
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
   }
 `;
 

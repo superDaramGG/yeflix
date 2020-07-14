@@ -9,9 +9,6 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 20px;
-  @media all and (min-width: 320px) and (max-width: 500px) {
-    padding: 150px 20px 20px 20px;
-  }
 `;
 
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
