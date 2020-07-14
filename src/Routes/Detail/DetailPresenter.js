@@ -9,6 +9,9 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   padding: 50px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    padding: 180px 10px 50px 10px;
+  }
 `;
 
 const Backdrop = styled.div`
@@ -23,6 +26,9 @@ const Backdrop = styled.div`
   filter: blur(3px);
   opacity: 0.5;
   z-index: 0;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    position: fixed;
+  }
 `;
 
 const Content = styled.div`
@@ -31,6 +37,9 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    display: block;
+  }
 `;
 
 const Cover = styled.div`
@@ -40,11 +49,21 @@ const Cover = styled.div`
   background-size: cover;
   height: 100%;
   border-radius: 5px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Data = styled.div`
   width: 70%;
   margin-left: 10px;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Title = styled.h3`
@@ -66,6 +85,10 @@ const Overview = styled.p`
   opacity: 0.7;
   line-height: 1.5;
   width: 50%;
+  @media all and (min-width: 320px) and (max-width: 500px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>

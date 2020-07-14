@@ -38,6 +38,7 @@ const Logo = styled.li`
     width: 100%;
     text-align: center;
     margin-left: 0;
+    font-size: 1.5rem;
   }
 `;
 
