@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e758199064d79d727b1b20efb22a5530",
+    "revision": "140049af5c167960170b7c83f84448e4",
     "url": "/yeflix/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/yeflix/static/js/2.01c02d84.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "24b5e1387baac660df11",
-    "url": "/yeflix/static/js/main.4b271f06.chunk.js"
+    "revision": "eafdcf6328ca238fa84b",
+    "url": "/yeflix/static/js/main.641d52ef.chunk.js"
   },
   {
     "revision": "afec328fc8f444d5741d",
