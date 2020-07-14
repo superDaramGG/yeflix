@@ -29,6 +29,9 @@ const Backdrop = styled.div`
   @media all and (min-width: 320px) and (max-width: 500px) {
     position: fixed;
   }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    position: fixed;
+  }
 `;
 
 const Content = styled.div`
@@ -38,6 +41,9 @@ const Content = styled.div`
   z-index: 1;
   height: 100%;
   @media all and (min-width: 320px) and (max-width: 500px) {
+    display: block;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
     display: block;
   }
 `;
@@ -52,6 +58,14 @@ const Cover = styled.div`
   @media all and (min-width: 320px) and (max-width: 500px) {
     width: 100%;
     margin-bottom: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    width: 100%;
+    margin-bottom: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 `;
 
@@ -62,7 +76,13 @@ const Data = styled.div`
     width: 100%;
     text-align: center;
     margin-left: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 5rem;
   }
 `;
 
@@ -86,6 +106,10 @@ const Overview = styled.p`
   line-height: 1.5;
   width: 50%;
   @media all and (min-width: 320px) and (max-width: 500px) {
+    width: 100%;
+    text-align: center;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
     width: 100%;
     text-align: center;
   }

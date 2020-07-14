@@ -19,6 +19,11 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, 125px);
   grid-gap: 25px;
   @media all and (min-width: 320px) and (max-width: 500px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
   }
 `;
